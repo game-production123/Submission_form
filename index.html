@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>開発進捗提出フォーム</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">submisson form</a>
+            <span class="header-text">sho_development</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <div>
+                <p class="eyebrow">daily development report form</p>
+
+                <h1>共同開発ができない日の為の<br>自作提出フォーム</h1>
+
+                <p class="intro-text">
+                    個人で進めたプログラムと作業内容を提出して、開発状況を共有
+                </p>
+            </div>
+
+            <div class="deadline-card">
+                <p>毎日の提出目安</p>
+                <strong>21:00</strong>
+                <span>日本時間</span>
+                <p id="deadlineMessage"></p>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="panel">
+                <div class="panel-heading">
+                    <span class="section-number">01</span>
+
+                    <div>
+                        <h2>作業内容を提出</h2>
+                        <p>コードの進行状況などをshoに提出する内容</p>
+                    </div>
+                </div>
+
+                <form id="submissionForm">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="memberName">提出者名</label>
+
+                            <input
+                                type="text"
+                                id="memberName"
+                                maxlength="40"
+                                placeholder="名前を入力"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="workDate">作業日</label>
+                            <input type="date" id="workDate" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="summary">今日の作業内容</label>
+
+                        <textarea
+                            id="summary"
+                            rows="5"
+                            maxlength="3000"
+                            placeholder="例：～部分を付け足したなど"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="nextTask">
+                            問題点
+                        </label>
+
+                        <textarea
+                            id="nextTask"
+                            rows="4"
+                            maxlength="3000"
+                            placeholder="shoにやってほしい作業など"
+                        ></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="codeFiles">提出するファイル</label>
+
+                        <div class="file-box">
+                            <input
+                                type="file"
+                                id="codeFiles"
+                                accept=".html,.css,.js,.json,.txt,.md,.zip,.c,.cpp,.h,.cs,.py,.java,.ts,.tsx,.jsx"
+                                multiple
+                            >
+
+                            <p>
+                                HTML・CSS・JS・ZIPなど<br>
+                                最大10ファイル・合計10MB
+                            </p>
+                        </div>
+
+                        <ul id="fileList" class="file-list"></ul>
+                    </div>
+
+                    <p class="note">
+                        フォルダ全体を提出するときはZIPにしてね
+                    </p>
+
+                    <button type="submit" id="submitButton" class="submit-button">
+                        shoに提出
+                    </button>
+
+                    <p id="formMessage" class="form-message" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <span class="section-number">02</span>
+
+                    <div>
+                        <h2>提出履歴</h2>
+                        <p>進捗を確認</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="refreshButton"
+                        class="refresh-button"
+                    >
+                        更新
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="名前・作業内容を検索"
+                        aria-label="提出履歴を検索"
+                    >
+
+                    <input
+                        type="date"
+                        id="dateFilter"
+                        aria-label="作業日で絞り込み"
+                    >
+
+                    <button type="button" id="clearFilterButton">
+                        解除
+                    </button>
+                </div>
+
+                <p id="historyMessage" class="history-message" role="status"></p>
+
+                <div id="submissionList"></div>
+            </section>
+        </div>
+
+        <footer>
+            <strong>© 2026 | sho_development</strong>
+            <p>毎日少しずつでも進めよう！</p>
+            <small>
+                21時を過ぎても提出できます。自動通知はありません。
+            </small>
+        </footer>
+    </main>
+</body>
+</html>
