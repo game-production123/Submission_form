@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzpfeMdt5z2SkAOqm3HUHIB-_2OBFHFfZyiYiVl-MKd16sB5FOTT-Sgx8GUz2d-PwwO5g/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycby8UJRg5tA5aNzU4A7F7n5d7BzE3wxV60av_cBqy3zm7BwvtcGPBhkTW4jUpuJTLiA61Q/exec";
 const TEAM_KEY = "team_ks";
 
 const submissionForm = document.getElementById("submissionForm");
