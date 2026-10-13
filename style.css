@@ -424,3 +424,149 @@ footer small {
         gap: 0;
     }
 }
+
+
+.time-area {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.time-area .deadline-card {
+    min-width: 250px;
+}
+
+
+.clock-card {
+    min-width: 200px;
+    padding: 20px;
+    border: 1px solid #dce2d3;
+    border-radius: 18px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-card p {
+    margin: 0 0 12px;
+    font-size: 12px;
+}
+
+.clock-card span {
+    margin-top: 12px;
+    font-size: 11px;
+    color: #798474;
+}
+
+
+
+.analog-clock {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border: 3px solid #304c3c;
+    border-radius: 50%;
+    background: #fcfdf9;
+    flex-shrink: 0;
+}
+
+
+.clock-number {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: #304c3c;
+    z-index: 1;
+}
+
+
+.clock-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 6px;
+    background: #87927d;
+    transform-origin: center center;
+}
+
+
+.clock-mark.major {
+    width: 3px;
+    height: 13px;
+    background: #304c3c;
+}
+
+
+.clock-hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: center bottom;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+
+.hour-hand {
+    width: 6px;
+    height: 44px;
+    margin-left: -3px;
+    background: #304c3c;
+}
+
+
+.minute-hand {
+    width: 4px;
+    height: 62px;
+    margin-left: -2px;
+    background: #304c3c;
+}
+
+
+.second-hand {
+    width: 2px;
+    height: 70px;
+    margin-left: -1px;
+    background: #c45848;
+}
+
+
+.clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #304c3c;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+
+
+@media (max-width: 1050px) {
+    .intro {
+        flex-wrap: wrap;
+    }
+
+    .time-area {
+        width: 100%;
+    }
+
+    .clock-card,
+    .time-area .deadline-card {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .time-area {
+        flex-direction: column;
+    }
+}
